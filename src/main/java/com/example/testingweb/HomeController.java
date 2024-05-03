@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
-	@RequestMapping("/")
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE, headers = "X-Forwarded-Proto=https")
 	public @ResponseBody String greeting() {
 		return "Hola, soy Gonzalo Tello";
 	}
