@@ -15,9 +15,7 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
       
-      - name: Compilacion
-        run: |
-         mvn package
+     
           
       - name: Compilar y ejecutar pruebas
         run: | 
