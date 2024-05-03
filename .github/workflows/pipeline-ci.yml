@@ -1,0 +1,14 @@
+name: CI
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Clonacion de codigo
+        uses: actions/checkout@v4
+        
+
+  
+      
