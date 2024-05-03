@@ -8,7 +8,30 @@ jobs:
     
       - name: Clonacion de codigo
         uses: actions/checkout@v4
-        
-
-  
+     
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.2.1
+        with: 
+          java-version: '8'
+          distribution: 'temurin'
       
+      - name: Compilacion
+        run: |
+         mvn package
+          
+      - name: Compilar y ejecutar pruebas
+        run: | 
+          mvn clean test
+
+      - name: Generar informe de cobertura con Jacoco
+        run: |
+          mvn jacoco:report
+
+      - name: Subir informe de cobertura de código
+        uses: actions/upload-artifact@v2
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/index.html 
+  
+    
+        
