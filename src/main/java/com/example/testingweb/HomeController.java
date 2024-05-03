@@ -11,7 +11,7 @@ public class HomeController {
     @RequestMapping
     @ResponseBody
     public String greeting() {
-        String a = 'dsadsa';
+        //String a = 'dsadsa';
         return "Hola, soy Gonzalo Tello";
     }
 
