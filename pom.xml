@@ -55,7 +55,7 @@
 						</goals>
 						<configuration>
 			                            <excludes>
-			                                <exclude>**/TestingWebApplication.**</exclude>
+			                                <exclude>com/example/testingweb/TestingWebApplication.class</exclude>
 			                            </excludes>
 			                        </configuration>
 					</execution>
