@@ -24,6 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: microservicio-java-service
+  namespace: microservicio-java
 spec:
   selector:
     app: microservicio-java
