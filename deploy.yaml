@@ -1,9 +1,23 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservicio-java-service
+  namespace: microservicio
+spec:
+  selector:
+    app: microservicio-java
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: microservicio-java
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: microservicio-java
@@ -18,17 +32,4 @@ spec:
         ports:
         - containerPort: 8080
 
----
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: microservicio-java-service
-  namespace: microservicio
-spec:
-  selector:
-    app: microservicio-java
-  ports:
-  - protocol: TCP
-    port: 8080
-    targetPort: 8080
