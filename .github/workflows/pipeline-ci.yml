@@ -16,11 +16,9 @@ jobs:
           distribution: 'temurin'
       
      
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-
-      - name: Run Tests with Jacoco
-        run: mvn jacoco:prepare-agent test
+      - name: Compilar y ejecutar pruebas
+        run: | 
+          mvn clean test
 
       - name: Generar informe de cobertura con Jacoco
         run: |
