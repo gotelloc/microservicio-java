@@ -48,16 +48,18 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.12</version>
+				<configuration>
+				    <excludes>
+					<exclude>com/example/testingweb/TestingWebApplication.class</exclude>
+				    </excludes>
+				</configuration>
+				
 				<executions>
 					<execution>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
-						<configuration>
-			                            <excludes>
-			                                <exclude>com/example/testingweb/TestingWebApplication.class</exclude>
-			                            </excludes>
-			                        </configuration>
+						
 					</execution>
 					<execution>
 						<id>report</id>
